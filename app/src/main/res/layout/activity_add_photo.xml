@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relLayout1">
+        <include layout="@layout/snippet_top_addphoto_toolbar"/>
+    </RelativeLayout>
+
+    <ScrollView
+            android:layout_below="@+id/relLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:src="@color/link_blue"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:id="@+id/addphoto_image"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="fitXY"/>
+
+            <ProgressBar
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/progress_bar"
+                    android:layout_centerInParent="true"/>
+
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/addphoto_edit_explain"
+                    android:layout_below="@+id/addphoto_image"
+                    android:hint="이 사진에 대해 이야기해주세요..."
+                    android:fontFamily="@font/hannafont"
+                    android:maxLength="200"
+                    android:maxLines="7"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"/>
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+
+
+</RelativeLayout>

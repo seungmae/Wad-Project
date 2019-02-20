@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.wadapp.lsm.wad">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application
+            android:name=".Home.BaseApplication"
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_aicon"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+        <activity
+                android:name="com.wadapp.lsm.wad.Home.HomeActivity"
+                android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.wadapp.lsm.wad.Home.SplashActivity"/>
+        <activity android:name="com.wadapp.lsm.wad.Share.ShareActivity"/>
+        <activity android:name="com.wadapp.lsm.wad.Share.UserShareActivity"/>
+        <activity android:name="com.wadapp.lsm.wad.Share.PopularShareActivity"/>
+        <activity android:name="com.wadapp.lsm.wad.Share.CommentActivity"/>
+        <activity android:name="com.wadapp.lsm.wad.Share.AddPhotoActivity"/>
+        <activity android:name="com.wadapp.lsm.wad.Login.LoginActivity"/>
+        <activity android:name="com.wadapp.lsm.wad.Login.RegisterActivity"/>
+        <activity android:name="com.wadapp.lsm.wad.Settings.SettingsActivity"/>
+        <activity android:name="com.wadapp.lsm.wad.Settings.UsernamesetActivity"/>
+        <activity android:name="com.wadapp.lsm.wad.Settings.DeleteAccountActivity"/>
+        <activity android:name="com.wadapp.lsm.wad.Settings.TermsActivity">
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,393 @@
+<merge xmlns:app="http://schemas.android.com/apk/res-auto"
+       xmlns:tools="http://schemas.android.com/tools"
+       xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <RelativeLayout
+                android:background="@color/white2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <!-- 내 계정 -->
+            <RelativeLayout
+                    android:id="@+id/my_account"
+                    android:background="@color/light_grey"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                <TextView
+                        android:text="내 계정"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/juafont"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"/>
+
+            </RelativeLayout>
+
+            <!-- 닉네임 -->
+            <RelativeLayout
+                    android:id="@+id/user_name"
+                    android:layout_below="@+id/my_account"
+                    android:background="@drawable/white_grey_border_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp">
+                <RelativeLayout
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <TextView
+                            android:text="닉네임"
+                            android:textSize="20dp"
+                            android:fontFamily="@font/juafont"
+                            android:textColor="@color/black"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_height="wrap_content"/>
+
+                    <TextView
+                            android:id="@+id/text_user_name"
+                            tools:text="이승민"
+                            android:textSize="18dp"
+                            android:fontFamily="@font/juafont"
+                            android:textColor="@color/grey"
+                            android:layout_centerVertical="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="33dp"/>
+
+                    <ImageView
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ic_next"
+                            android:layout_centerVertical="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- 이메일 -->
+            <RelativeLayout
+                    android:id="@+id/user_email"
+                    android:layout_below="@+id/user_name"
+                    android:background="@drawable/white_grey_border_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp">
+                <TextView
+                        android:text="이메일"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/juafont"
+                        android:textColor="@color/black"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:id="@+id/text_user_email"
+                        tools:text="dltmdals@naver.com"
+                        android:fontFamily="@font/juafont"
+                        android:textSize="18dp"
+                        android:textColor="@color/grey"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="9dp"/>
+
+
+            </RelativeLayout>
+
+            <!-- 비밀번호 -->
+            <RelativeLayout
+                    android:id="@+id/user_password"
+                    android:background="@drawable/white_grey_border_bottom"
+                    android:layout_below="@+id/user_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp">
+                <RelativeLayout
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <TextView
+                            android:text="비밀번호"
+                            android:textSize="20dp"
+                            android:fontFamily="@font/juafont"
+                            android:textColor="@color/black"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_height="wrap_content"/>
+
+                    <ImageView
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ic_next"
+                            android:layout_centerVertical="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- 추가정보 -->
+            <RelativeLayout
+                    android:id="@+id/information"
+                    android:layout_below="@+id/user_password"
+                    android:background="@color/light_grey"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                <TextView
+                        android:text="추가 정보"
+                        android:fontFamily="@font/juafont"
+                        android:layout_centerVertical="true"
+                        android:textSize="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"/>
+
+            </RelativeLayout>
+
+            <!-- 이용약관 및 개인정보 취급방침 -->
+            <RelativeLayout
+                    android:id="@+id/info1"
+                    android:layout_below="@+id/information"
+                    android:background="@drawable/white_grey_border_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp">
+                <RelativeLayout
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <TextView
+                            android:text="이용약관 및 개인정보 취급방침"
+                            android:fontFamily="@font/juafont"
+                            android:textSize="20dp"
+                            android:textColor="@color/black"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_height="wrap_content"/>
+
+                    <ImageView
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ic_next"
+                            android:layout_centerVertical="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- 고객지원 -->
+            <RelativeLayout
+                    android:id="@+id/support"
+                    android:layout_below="@+id/info1"
+                    android:background="@color/light_grey"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                <TextView
+                        android:text="고객 지원"
+                        android:fontFamily="@font/juafont"
+                        android:layout_centerVertical="true"
+                        android:textSize="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"/>
+
+            </RelativeLayout>
+
+            <!-- 문의 하기 -->
+            <RelativeLayout
+                    android:id="@+id/sendfeedback"
+                    android:layout_below="@+id/support"
+                    android:background="@drawable/white_grey_border_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp">
+                <RelativeLayout
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <TextView
+                            android:text="문의 하기"
+                            android:textSize="20dp"
+                            android:fontFamily="@font/juafont"
+                            android:textColor="@color/black"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_height="wrap_content"/>
+
+                    <ImageView
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ic_next"
+                            android:layout_centerVertical="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- 계정 관리 -->
+            <RelativeLayout
+                    android:id="@+id/setting_account"
+                    android:layout_below="@+id/sendfeedback"
+                    android:background="@color/light_grey"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                <TextView
+                        android:text="계정 관리"
+                        android:fontFamily="@font/juafont"
+                        android:layout_centerVertical="true"
+                        android:textSize="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"/>
+
+            </RelativeLayout>
+
+            <!-- 캐시 삭제 -->
+            <RelativeLayout
+                    android:id="@+id/cachedelete"
+                    android:layout_below="@+id/setting_account"
+                    android:background="@drawable/white_grey_border_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp">
+                <RelativeLayout
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <TextView
+                            android:text="캐시 삭제"
+                            android:textSize="20dp"
+                            android:fontFamily="@font/juafont"
+                            android:textColor="@color/black"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_height="wrap_content"/>
+
+                    <TextView
+                            android:id="@+id/cache_data"
+                            android:text="모든 캐시가 삭제됩니다"
+                            android:fontFamily="@font/juafont"
+                            android:textSize="12dp"
+                            android:textColor="@color/link_blue"
+                            android:layout_centerVertical="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="33dp"/>
+
+                    <ImageView
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ic_next"
+                            android:layout_centerVertical="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- 로그아웃 -->
+            <RelativeLayout
+                    android:id="@+id/logout"
+                    android:layout_below="@+id/cachedelete"
+                    android:background="@drawable/white_grey_border_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp">
+                <RelativeLayout
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    <TextView
+                            android:text="로그아웃"
+                            android:textSize="20dp"
+                            android:fontFamily="@font/juafont"
+                            android:textColor="@color/black"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_height="wrap_content"/>
+
+                    <ImageView
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ic_next"
+                            android:layout_centerVertical="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!-- 계정탈퇴 -->
+            <RelativeLayout
+                    android:id="@+id/delete_account"
+                    android:layout_below="@+id/logout"
+                    android:background="@drawable/white_grey_border_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp">
+                <RelativeLayout
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <TextView
+                            android:text="계정 탈퇴"
+                            android:textSize="20dp"
+                            android:fontFamily="@font/juafont"
+                            android:textColor="#DC143C"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_height="wrap_content"/>
+
+                    <ImageView
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ic_next"
+                            android:layout_centerVertical="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                    android:layout_below="@+id/delete_account"
+                    android:orientation="vertical"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:text="WAD : 와드"
+                        android:textSize="10dp"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/hannafont"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                <TextView
+                        android:text="개발자 메일 : smwad7618@gmail.com"
+                        android:textSize="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/hannafont"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+</merge>

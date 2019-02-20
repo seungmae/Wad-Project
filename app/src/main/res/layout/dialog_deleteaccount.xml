@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/v1"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:fontFamily="@font/juafont"
+            android:textSize="18dp"
+            android:text="정말 탈퇴 하시겠습니까?"/>
+
+    <Button
+            android:layout_width="218dp"
+            android:layout_height="wrap_content"
+            android:text="탈퇴"
+            android:textColor="@color/white"
+            android:fontFamily="@font/juafont"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:id="@+id/btn_SignoutYes"
+            android:layout_below="@+id/v1"
+            android:background="@drawable/red_rounded_button"/>
+
+    <Button
+            android:layout_width="218dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/juafont"
+            android:text="취소"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="20sp"
+            android:id="@+id/btn_SignoutNo"
+            android:layout_below="@+id/btn_SignoutYes"
+            android:background="#00ff0000"/>
+
+</RelativeLayout>

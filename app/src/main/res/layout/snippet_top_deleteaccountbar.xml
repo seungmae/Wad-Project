@@ -1,0 +1,51 @@
+<merge  xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/white_grey_border_bottom">
+
+        <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/toolbar">
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:id="@+id/ivBackArrow"
+                        android:src="@drawable/ic_backarrow"
+                        android:layout_alignParentLeft="true"/>
+
+                <TextView
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="계정 탈퇴"
+                        android:fontFamily="@font/juafont"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:gravity="center"/>
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="탈퇴"
+                        android:fontFamily="@font/hannafont"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:textSize="18sp"
+                        android:textColor="#DC143C"
+                        android:layout_centerVertical="true"
+                        android:id="@+id/delete_user"/>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+</merge>

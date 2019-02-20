@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="55dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp">
+
+        <!-- 일단 textview -->
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_wad"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="40dp"/>
+
+        <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:fontFamily="@font/juafont"
+                    android:hint="이메일"
+                    android:maxLength="35"
+                    android:id="@+id/input_email"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:maxLength="16"
+                    android:hint="비밀번호"
+                    android:id="@+id/input_password"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.v7.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
+                android:text="로그인"
+                android:fontFamily="@font/juafont"
+                android:id="@+id/btn_login"
+                android:padding="12dp"
+                android:background="@drawable/white_rounded_button"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="25dp"
+                android:text="계정이 없으신가요? 가입하기"
+                android:fontFamily="@font/juafont"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:id="@+id/link_signup"
+                android:textColor="@color/link_blue"/>
+
+    </LinearLayout>
+
+    <ProgressBar
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:id="@+id/progress_bar"
+            android:layout_centerInParent="true"/>
+
+
+</RelativeLayout>

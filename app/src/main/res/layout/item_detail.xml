@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_grey_border_bottom"
+        android:id="@+id/view_detail">
+
+    <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+        <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="TEST"
+                android:fontFamily="@font/juafont"
+                android:textSize="18sp"
+                android:textColor="@color/grey"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/detalview_word_textview"/>
+
+        <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+        <ImageView
+                android:visibility="gone"
+                android:id="@+id/delete_post"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/detailview_imageview_content"
+                android:src="@color/link_blue"
+                android:scaleType="fitXY"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical">
+        <TextView
+                android:id="@+id/detalview_username_textview"
+                android:fontFamily="@font/juafont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:textColor="@color/black"
+                tools:text="User name"/>
+
+        <View
+                android:layout_width="249dp"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+        </View>
+        <ImageView
+                android:id="@+id/detailview_favorite_imageview"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_clover_white"/>
+
+        <TextView
+                android:id="@+id/detailview_favoritecounter_textview"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:fontFamily="@font/juafont"
+                android:text="좋아요 0개"/>
+
+    </LinearLayout>
+
+
+
+    <TextView
+            android:id="@+id/detailview_explain_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="사진 내용"
+            android:fontFamily="@font/hanna"
+            android:textColor="@color/black"
+
+            android:layout_marginLeft="10dp"/>
+
+    <TextView
+            android:id="@+id/detailview_commentcounter_textview"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/juafont"
+            android:layout_marginLeft="10dp"
+            android:text="댓글 0개 보기"/>
+
+</LinearLayout>

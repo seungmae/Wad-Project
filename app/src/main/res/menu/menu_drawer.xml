@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:showIn="navigation_view">
+
+    <group>
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_home"
+            android:title="홈"/>
+        <item
+                android:id="@+id/todayword"
+                android:icon="@drawable/ic_tword"
+                android:title="오늘 단어"/>
+
+        <item
+                android:id="@+id/userword"
+                android:icon="@drawable/ic_word"
+                android:title="내가 올린 글"/>
+
+        <item
+                android:id="@+id/popular"
+                android:icon="@drawable/ic_clover_white"
+                android:title="인기 글"/>
+
+        <item
+                android:id="@+id/settings"
+                android:icon="@drawable/ic_settings"
+                android:title="설정"/>
+    </group>
+
+</menu>
