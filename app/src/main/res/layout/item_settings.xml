@@ -135,10 +135,41 @@
 
             </RelativeLayout>
 
+            <!-- 내가 올린글 -->
+            <RelativeLayout
+                    android:id="@+id/user_share"
+                    android:background="@drawable/white_grey_border_bottom"
+                    android:layout_below="@+id/user_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp">
+                <RelativeLayout
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <TextView
+                            android:text="내가 올린글"
+                            android:textSize="20dp"
+                            android:fontFamily="@font/juafont"
+                            android:textColor="@color/black"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_height="wrap_content"/>
+
+                    <ImageView
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ic_next"
+                            android:layout_centerVertical="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
             <!-- 추가정보 -->
             <RelativeLayout
                     android:id="@+id/information"
-                    android:layout_below="@+id/user_password"
+                    android:layout_below="@+id/user_share"
                     android:background="@color/light_grey"
                     android:layout_width="match_parent"
                     android:layout_height="40dp">

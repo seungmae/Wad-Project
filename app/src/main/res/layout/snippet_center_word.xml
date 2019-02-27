@@ -35,16 +35,16 @@
                 android:textColor="@color/black"
                 android:layout_centerHorizontal="true"/>
 
-        <com.airbnb.lottie.LottieAnimationView
-                android:foregroundGravity="center"
-                android:layout_below="@+id/today_word"
-                android:id="@+id/lottie"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:lottie_autoPlay="true"
-                app:lottie_repeatCount="5"
-                android:layout_centerHorizontal="true"
-                app:lottie_fileName="pointer.json"/>
+        <!--<com.airbnb.lottie.LottieAnimationView-->
+                <!--android:foregroundGravity="center"-->
+                <!--android:layout_below="@+id/today_word"-->
+                <!--android:id="@+id/lottie"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="50dp"-->
+                <!--app:lottie_autoPlay="true"-->
+                <!--app:lottie_repeatCount="5"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--app:lottie_fileName="pointer.json"/>-->
 
     </RelativeLayout>
 

@@ -30,6 +30,7 @@
                 android:layout_weight="1" />
 
         <ImageView
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:visibility="gone"
                 android:id="@+id/delete_post"
                 android:layout_marginRight="10dp"
@@ -90,8 +91,6 @@
 
     </LinearLayout>
 
-
-
     <TextView
             android:id="@+id/detailview_explain_textview"
             android:layout_width="match_parent"
@@ -103,6 +102,7 @@
             android:layout_marginLeft="10dp"/>
 
     <TextView
+            android:background="?attr/selectableItemBackground"
             android:id="@+id/detailview_commentcounter_textview"
             android:layout_gravity="center_vertical"
             android:layout_width="wrap_content"

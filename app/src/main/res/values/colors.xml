@@ -9,5 +9,6 @@
     <color name="link_blue">#005ce6</color>
     <color name="grey">#bfbfbf</color>
     <color name="light_grey">#E2E2E2</color>
+    <color name="dark_grey">#A9A9A9</color>
 
 </resources>

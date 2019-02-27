@@ -23,14 +23,11 @@
             </intent-filter>
         </activity>
         <activity android:name="com.wadapp.lsm.wad.Home.SplashActivity"/>
-        <activity android:name="com.wadapp.lsm.wad.Share.ShareActivity"/>
         <activity android:name="com.wadapp.lsm.wad.Share.UserShareActivity"/>
-        <activity android:name="com.wadapp.lsm.wad.Share.PopularShareActivity"/>
         <activity android:name="com.wadapp.lsm.wad.Share.CommentActivity"/>
         <activity android:name="com.wadapp.lsm.wad.Share.AddPhotoActivity"/>
         <activity android:name="com.wadapp.lsm.wad.Login.LoginActivity"/>
         <activity android:name="com.wadapp.lsm.wad.Login.RegisterActivity"/>
-        <activity android:name="com.wadapp.lsm.wad.Settings.SettingsActivity"/>
         <activity android:name="com.wadapp.lsm.wad.Settings.UsernamesetActivity"/>
         <activity android:name="com.wadapp.lsm.wad.Settings.DeleteAccountActivity"/>
         <activity android:name="com.wadapp.lsm.wad.Settings.TermsActivity">
