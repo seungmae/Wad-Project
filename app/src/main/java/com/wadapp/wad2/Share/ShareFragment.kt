@@ -23,7 +23,6 @@ import com.wadapp.lsm.wad.Share.CommentActivity
 import com.wadapp.lsm.wad.model.ContentDTO
 import kotlinx.android.synthetic.main.fragment_share.*
 import kotlinx.android.synthetic.main.item_detail.view.*
-import kotlinx.android.synthetic.main.snippet_top_popularsharetoolbar.view.*
 import kotlinx.android.synthetic.main.snippet_top_sharetoolbar.view.*
 import java.text.SimpleDateFormat
 import java.util.*

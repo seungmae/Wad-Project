@@ -20,7 +20,6 @@ import com.google.firebase.firestore.Query
 import com.wadapp.lsm.wad.R
 import com.wadapp.lsm.wad.Share.CommentActivity
 import com.wadapp.lsm.wad.model.ContentDTO
-import com.wadapp.wad2.Home.HomeFragment
 import kotlinx.android.synthetic.main.fragment_popular.*
 import kotlinx.android.synthetic.main.item_detail.view.*
 import kotlinx.android.synthetic.main.snippet_top_popularsharetoolbar.view.*
