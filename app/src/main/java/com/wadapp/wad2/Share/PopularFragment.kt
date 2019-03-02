@@ -1,5 +1,6 @@
 package com.wadapp.wad2.Share
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -17,14 +18,16 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.Query
+import com.wadapp.lsm.wad.Home.HomeActivity
 import com.wadapp.lsm.wad.R
 import com.wadapp.lsm.wad.Share.CommentActivity
 import com.wadapp.lsm.wad.model.ContentDTO
+import com.wadapp.wad2.Home.HomeFragment
 import kotlinx.android.synthetic.main.fragment_popular.*
 import kotlinx.android.synthetic.main.item_detail.view.*
 import kotlinx.android.synthetic.main.snippet_top_popularsharetoolbar.view.*
 
-class PopularFragment : Fragment(){
+class PopularFragment : Fragment(),HomeActivity.onKeyBackPressedListener{
 
     private val contentDTOs : ArrayList<ContentDTO> = ArrayList()
     private val contentUidList : ArrayList<String> = ArrayList()
@@ -33,6 +36,19 @@ class PopularFragment : Fragment(){
     var firestore : FirebaseFirestore? = null
     var auth : FirebaseAuth? = null
     var imagesSnapshot : ListenerRegistration? = null
+
+    //뒤로가기누르면 홈으로
+    override fun onBackkey() {
+        val activity : HomeActivity = activity as HomeActivity
+        //뒤로가기누르면 리스너를 null로
+        activity?.setOnKeyBackPressedListener(null)
+        getActivity()?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment_container, HomeFragment())?.commit()
+    }
+
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+        (context as HomeActivity).setOnKeyBackPressedListener(this)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var view = inflater.inflate(R.layout.fragment_popular, container, false)
@@ -60,6 +76,7 @@ class PopularFragment : Fragment(){
                 contentDTOs.add(item!!)
                 contentUidList.add(snapshot.id)
             }
+            shareactivity_recycleview.adapter?.notifyDataSetChanged()
         }
     }
     override fun onResume() {
@@ -67,7 +84,6 @@ class PopularFragment : Fragment(){
         //리사이클러뷰 적용
         shareactivity_recycleview.adapter = ShareRecyclerviewAdapter()
         shareactivity_recycleview.layoutManager = LinearLayoutManager(activity)
-
     }
 
     override fun onStop(){
@@ -93,9 +109,7 @@ class PopularFragment : Fragment(){
             return CustomViewHolder(view)
         }
 
-        override fun getItemCount(): Int {
-            return contentDTOs.size
-        }
+        override fun getItemCount() = contentDTOs.size
 
         override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
