@@ -1,11 +1,10 @@
 package com.wadapp.wad2.Share
 
-import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.support.v4.app.ActivityCompat
 import android.support.v4.app.Fragment
 import android.support.v4.widget.CircularProgressDrawable
 import android.support.v7.widget.LinearLayoutManager
@@ -17,17 +16,31 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.*
+import com.wadapp.lsm.wad.Home.HomeActivity
 import com.wadapp.lsm.wad.R
-import com.wadapp.lsm.wad.Share.AddPhotoActivity
 import com.wadapp.lsm.wad.Share.CommentActivity
 import com.wadapp.lsm.wad.model.ContentDTO
+import com.wadapp.wad2.Home.HomeFragment
 import kotlinx.android.synthetic.main.fragment_share.*
 import kotlinx.android.synthetic.main.item_detail.view.*
 import kotlinx.android.synthetic.main.snippet_top_sharetoolbar.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class ShareFragment : Fragment(){
+class ShareFragment : Fragment(),HomeActivity.onKeyBackPressedListener{
+
+    //뒤로가기누르면 홈으로
+    override fun onBackkey() {
+        val activity : HomeActivity = activity as HomeActivity
+        //뒤로가기누르면 리스너를 null로
+        activity?.setOnKeyBackPressedListener(null)
+        getActivity()?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment_container, HomeFragment())?.commit()
+    }
+
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+        (context as HomeActivity).setOnKeyBackPressedListener(this)
+    }
 
     private val contentDTOs : ArrayList<ContentDTO> = ArrayList()
     private val contentUidList : ArrayList<String> = ArrayList()
@@ -35,7 +48,7 @@ class ShareFragment : Fragment(){
     //파이어베이스
     var firestore : FirebaseFirestore? = null
     var auth : FirebaseAuth? = null
-    var imagesSnapshot : ListenerRegistration? = null
+    private var imagesSnapshot : ListenerRegistration? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var view = inflater.inflate(R.layout.fragment_share, container, false)
@@ -47,24 +60,7 @@ class ShareFragment : Fragment(){
         view.sharewad.setOnClickListener {
             shareactivity_recycleview.adapter?.notifyDataSetChanged()
         }
-
-        //공유 누르기
-        view.tvShare.setOnClickListener {
-            var intent = Intent(activity, AddPhotoActivity::class.java)
-            startActivityForResult(intent,2)
-        }
-
-        //안드로이드 사진 접근권한 허용
-        ActivityCompat.requestPermissions(this!!.activity!!, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 1)
-
         return view
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode == 2){
-            shareactivity_recycleview.adapter?.notifyDataSetChanged()
-        }
     }
 
     //오늘날짜 받기
@@ -84,7 +80,7 @@ class ShareFragment : Fragment(){
                 var doc : DocumentSnapshot = it.result
                 view?.today_word?.text = doc.getString("word")
             }else{
-                view?.today_word?.text = "단어없음"
+                view?.today_word?.text = "WAD"
             }
         }
     }
@@ -102,6 +98,7 @@ class ShareFragment : Fragment(){
                 contentDTOs.add(item!!)
                 contentUidList.add(snapshot.id)
             }
+            shareactivity_recycleview.adapter?.notifyDataSetChanged()
         }
 
     }
@@ -110,8 +107,12 @@ class ShareFragment : Fragment(){
         super.onResume()
         todaywordset()
         //리사이클러뷰 적용
-        shareactivity_recycleview.layoutManager = LinearLayoutManager(activity)
         shareactivity_recycleview.adapter = ShareRecyclerviewAdapter()
+        shareactivity_recycleview.layoutManager = LinearLayoutManager(activity)
+
+        //bottomnavigation 번호가 1번이므로
+        val activity = activity as HomeActivity
+        activity.setBottomTab(1)
     }
 
     override fun onStop(){
@@ -122,7 +123,6 @@ class ShareFragment : Fragment(){
     inner class ShareRecyclerviewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
         init {
-
             //위로당겨서 새로고침
             swipe_Refresh.setOnRefreshListener {
                 Handler(Looper.getMainLooper()).postDelayed({
@@ -131,8 +131,7 @@ class ShareFragment : Fragment(){
                     swipe_Refresh.isRefreshing = false
                 },400)
             }
-            swipe_Refresh.setColorSchemeResources(
-                android.R.color.holo_green_light)
+            swipe_Refresh.setColorSchemeResources(android.R.color.holo_green_light)
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType : Int): RecyclerView.ViewHolder {
@@ -141,9 +140,7 @@ class ShareFragment : Fragment(){
             return CustomViewHolder(view)
         }
 
-        override fun getItemCount(): Int {
-            return contentDTOs.size
-        }
+        override fun getItemCount() = contentDTOs.size
 
         override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
@@ -218,7 +215,7 @@ class ShareFragment : Fragment(){
                     contentDTO.favoriteCount = contentDTO.favoriteCount - 1
                     contentDTO.favorites.remove(uid)
 
-                    //좋아요를 누르지 않은 상태
+                //좋아요를 누르지 않은 상태
                 }else{
                     contentDTO.favorites[uid] = true
                     contentDTO.favoriteCount = contentDTO.favoriteCount + 1
