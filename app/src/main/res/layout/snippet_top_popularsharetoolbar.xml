@@ -16,8 +16,8 @@
 
                 <TextView
                         android:id="@+id/popularwad"
-                        android:background="@drawable/white_rounded_button"
-                        android:layout_width="70dp"
+                        android:background="@drawable/white_grey_border_bottom"
+                        android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:src="@drawable/ic_wad"

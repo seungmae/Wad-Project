@@ -46,7 +46,7 @@
                     android:maxLines="4"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_toLeftOf="@id/comment_btn_send" />
+                    android:layout_toLeftOf="@id/comment_btn_send"/>
 
             <ImageView
                     android:id="@+id/comment_btn_send"

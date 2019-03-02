@@ -2,7 +2,7 @@
 <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
         android:background="@color/white">
 
     <RelativeLayout
@@ -22,7 +22,6 @@
                 android:layout_height="wrap_content">
 
             <ImageView
-                    android:src="@color/link_blue"
                     android:layout_width="match_parent"
                     android:layout_height="400dp"
                     android:id="@+id/addphoto_image"

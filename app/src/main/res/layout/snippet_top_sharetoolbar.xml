@@ -16,8 +16,8 @@
 
                 <TextView
                         android:id="@+id/sharewad"
-                        android:background="@drawable/white_rounded_button"
-                        android:layout_width="70dp"
+                        android:background="@drawable/white_grey_border_bottom"
+                        android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:src="@drawable/ic_wad"
@@ -39,16 +39,6 @@
                         android:textColor="@color/grey"
                         android:textAlignment="center"
                         android:id="@+id/today_word"/>
-
-                <ImageView
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_tvshare"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="15dp"
-                        android:layout_centerVertical="true"
-                        android:id="@+id/tvShare"/>
 
             </RelativeLayout>
 
