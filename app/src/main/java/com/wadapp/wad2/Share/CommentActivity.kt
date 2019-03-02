@@ -80,17 +80,17 @@ class CommentActivity : AppCompatActivity() {
 
         //edittext 라인수 제한
         comment_edit_message.addTextChangedListener(object : TextWatcher {
-            var a = ""
+            var text = ""
 
             override fun afterTextChanged(s: Editable?) {}
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                a = s.toString()
+                text = s.toString()
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if(comment_edit_message.lineCount >= 4){
-                    comment_edit_message.setText(a)
+                    comment_edit_message.setText(text)
                     comment_edit_message.setSelection(comment_edit_message.length())
                 }
             }
