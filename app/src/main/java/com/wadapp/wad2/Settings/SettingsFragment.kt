@@ -1,5 +1,6 @@
 package com.wadapp.wad2.Settings
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -13,32 +14,52 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
+import com.wadapp.lsm.wad.Home.HomeActivity
 import com.wadapp.lsm.wad.Login.LoginActivity
 import com.wadapp.lsm.wad.R
 import com.wadapp.lsm.wad.Settings.DeleteAccountActivity
 import com.wadapp.lsm.wad.Settings.TermsActivity
 import com.wadapp.lsm.wad.Settings.UsernamesetActivity
 import com.wadapp.lsm.wad.Share.UserShareActivity
+import com.wadapp.wad2.Home.HomeFragment
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.dialog_change_password.view.*
 import kotlinx.android.synthetic.main.dialog_signout.view.*
 import kotlinx.android.synthetic.main.item_settings.*
 import kotlinx.android.synthetic.main.item_settings.view.*
 import kotlinx.android.synthetic.main.snippet_top_settingbar.view.*
 
-class SettingsFragment : Fragment(){
+class SettingsFragment : Fragment(),HomeActivity.onKeyBackPressedListener{
 
+    //파이어베이스
     private var auth : FirebaseAuth? = null
     private var firestore : FirebaseFirestore? = null
+
+    //뒤로가기누르면 홈으로
+    override fun onBackkey() {
+        val activity : HomeActivity = activity as HomeActivity
+        //뒤로가기누르면 리스너를 null로
+        activity?.setOnKeyBackPressedListener(null)
+        getActivity()?.supportFragmentManager?.beginTransaction()?.replace(R.id.fragment_container, HomeFragment())?.commit()
+    }
+
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+        (context as HomeActivity).setOnKeyBackPressedListener(this)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var view = inflater.inflate(R.layout.fragment_settings, container, false)
 
+        //파이어베이스 초기화
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
 
         setup_username_email()
 
-        view.settingwad.setOnClickListener {  }
+        view.settingwad.setOnClickListener {
+            activity!!.supportFragmentManager.beginTransaction().replace(R.id.fragment_container, HomeFragment()).commit()
+        }
 
         //닉네임
         view.user_name.setOnClickListener {
