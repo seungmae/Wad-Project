@@ -57,9 +57,7 @@ class UserShareActivity : AppCompatActivity() {
             for(snapshot in querySnapshot!!.documents){
                 if(auth?.currentUser!!.uid == snapshot.getString("uid")){
                     var item = snapshot.toObject(ContentDTO :: class.java)
-                    if (item != null) {
-                        contentDTOs.add(item)
-                    }
+                    contentDTOs.add(item!!)
                     contentUidList.add(snapshot.id)
                 }
             }
@@ -87,9 +85,7 @@ class UserShareActivity : AppCompatActivity() {
             return CustomViewHolder(view)
         }
 
-        override fun getItemCount(): Int {
-            return contentDTOs.size
-        }
+        override fun getItemCount() = contentDTOs.size
 
         override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
