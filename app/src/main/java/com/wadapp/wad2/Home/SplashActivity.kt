@@ -19,8 +19,11 @@ class SplashActivity : AppCompatActivity() {
 
     fun startLoading() {
         val handler = Handler()
-        handler.postDelayed(Runnable { finish() }, 2000)
+        handler.postDelayed(Runnable {
+            run{ finish()}
+        }, 2000)
     }
+
     //로그인 되있는지 확인
     fun checkCurrentUser(){
         val user = FirebaseAuth.getInstance().currentUser
